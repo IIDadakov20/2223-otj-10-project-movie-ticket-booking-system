@@ -134,13 +134,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Back-End\CppFiles\startApplication.cpp" />
-    <ClCompile Include="Front-End\CppFiles\fsds.cpp" />
+    <ClCompile Include="Back-End\CppFiles\applicationSetUp.cpp" />
+    <ClCompile Include="Front-End\CppFiles\startApplication.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Back-End\HeaderFiles\startApplication.h" />
-    <ClInclude Include="Front-End\HeaderFiles\dsds.h" />
+    <ClInclude Include="Back-End\HeaderFiles\applicationSetUp.h" />
+    <ClInclude Include="Front-End\HeaderFiles\startApplication.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

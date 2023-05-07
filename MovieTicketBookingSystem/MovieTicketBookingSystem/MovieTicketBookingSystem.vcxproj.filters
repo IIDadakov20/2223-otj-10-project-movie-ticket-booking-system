@@ -18,18 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Front-End\CppFiles\fsds.cpp">
+    <ClCompile Include="Front-End\CppFiles\startApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Back-End\CppFiles\startApplication.cpp">
+    <ClCompile Include="Back-End\CppFiles\applicationSetUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Front-End\HeaderFiles\dsds.h">
+    <ClInclude Include="Front-End\HeaderFiles\startApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Back-End\HeaderFiles\startApplication.h">
+    <ClInclude Include="Back-End\HeaderFiles\applicationSetUp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
