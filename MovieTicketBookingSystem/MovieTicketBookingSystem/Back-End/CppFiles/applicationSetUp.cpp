@@ -1,9 +1,6 @@
 #include "../HeaderFiles/applicationSetUp.h"
 
-Application::Application(int width, int height)
-	:
-	screenWidth(width),
-	screenHeight(height)
+Application::Application()
 {
 	SetExitKey(KEY_ESCAPE);
 }
@@ -14,7 +11,20 @@ Application::~Application() noexcept
 	CloseWindow();
 }
 
-bool Application::ApplicationShouldClose() const
+bool Application::applicationShouldClose() const
 {
-	return WindowShouldClose();
+	return mainMenu.appShouldClose || WindowShouldClose();
+}
+
+MainMenu& MainMenu::getInstance()
+{
+	static MainMenu mainMenu;
+	return mainMenu;
+}
+
+bool checkCollision(int x, int y, int width, int height)
+{
+	Rectangle rec = { x, y, width, height };
+
+	return CheckCollisionPointRec(GetMousePosition(), rec);
 }

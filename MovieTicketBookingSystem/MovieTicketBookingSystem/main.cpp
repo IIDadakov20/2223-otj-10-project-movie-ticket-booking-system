@@ -1,4 +1,5 @@
 #include "Front-End/HeaderFiles/startApplication.h"
+#include "Back-End/HeaderFiles/applicationSetUp.h"
 
 int main()
 {
@@ -7,9 +8,9 @@ int main()
 
 	InitWindow(screenWidth, screenHeight, "MTBS");
 
-	Application app(screenWidth, screenHeight);
+	Application app;
 
-	while (!app.ApplicationShouldClose())
+	while (!app.applicationShouldClose())
 	{
 		app.startApplication();
 	}

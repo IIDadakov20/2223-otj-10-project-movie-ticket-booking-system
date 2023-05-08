@@ -2,11 +2,10 @@
 
 #include <iostream>
 #include <raylib.h>
-#include "../../Back-End/HeaderFiles/applicationSetUp.h"
 
 using namespace std;
 
-/*class MainMenu
+class MainMenu
 {
 public:
 
@@ -17,15 +16,22 @@ public:
 	void DrawMainMenu();
 
 	bool isMenuOpen = true;
-	bool gameShouldClose = false;
-	bool isExitPressed = false;
+	bool appShouldClose = false;
 
 private:
 
 	MainMenu();
 	~MainMenu();
 
-	void newGame();
+	//void newGame();
 
-	Texture2D mainMenuTexture;
-};*/
+	Texture2D mainMenuBackground;
+	Texture2D button;
+	Texture2D exitButton;
+
+	Font font;
+};
+
+bool DrawButton(int x, int y, int width, int height, Texture2D texture, Vector2 pos, int fontSize, const char* name, Font font);
+
+//void DrawText(int x, int y, int fontSize, const char* name, Font font);
