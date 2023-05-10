@@ -4,7 +4,7 @@
 MainMenu::MainMenu()
 {
 	mainMenuBackground = LoadTexture("../assets/mainMenuBackground.png");
-	button = LoadTexture("../assets/button.png");
+	startButton = LoadTexture("../assets/startButton.png");
 	exitButton = LoadTexture("../assets/exit.png");
 
 	font = LoadFont("../assets/font.ttf");
@@ -13,7 +13,7 @@ MainMenu::MainMenu()
 MainMenu::~MainMenu()
 {
 	UnloadTexture(mainMenuBackground);
-	UnloadTexture(button);
+	UnloadTexture(startButton);
 	UnloadTexture(exitButton);
 
 	UnloadFont(font);
@@ -41,9 +41,14 @@ void MainMenu::DrawMainMenu()
 {
 	DrawTexture(mainMenuBackground, 0, 0, RAYWHITE);
 
-	DrawButton(360, 455, 250, 70, button, { 425, 465 }, 50, "Sofia", font);
-	DrawButton(640, 455, 250, 70, button, { 696, 465 }, 50, "Varna", font);
-	DrawButton(920, 455, 250, 70, button, { 967, 465 }, 50, "Burgas", font);
+	if (checkCollision(519, 462, 608, 191))
+	{
+		DrawTexture(startButton, 519, 462, { 150, 144, 144 ,255 });
+		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+		{
+			
+		}
+	}
 	
 	if (checkCollision(70, 600 , 65, 45))
 	{

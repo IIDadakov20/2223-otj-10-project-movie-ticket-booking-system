@@ -26,7 +26,7 @@ private:
 	//void newGame();
 
 	Texture2D mainMenuBackground;
-	Texture2D button;
+	Texture2D startButton;
 	Texture2D exitButton;
 
 	Font font;
