@@ -1,5 +1,4 @@
-#include "Front-End/HeaderFiles/startApplication.h"
-#include "Back-End/HeaderFiles/applicationSetUp.h"
+#include "HeaderFiles/applicationSetUp.h"
 
 int main()
 {

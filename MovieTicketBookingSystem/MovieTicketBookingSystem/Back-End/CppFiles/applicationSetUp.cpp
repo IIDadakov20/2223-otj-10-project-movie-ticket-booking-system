@@ -1,4 +1,4 @@
-#include "../HeaderFiles/applicationSetUp.h"
+#include "../../HeaderFiles/applicationSetUp.h"
 
 Application::Application()
 {
@@ -11,6 +11,24 @@ Application::~Application() noexcept
 	CloseWindow();
 }
 
+void Application::startApplication()
+{
+	BeginDrawing();
+
+	ClearBackground(RAYWHITE);
+
+	if (!mainMenu.isMenuOpen)
+	{
+		cinemaPage.DrawCinema();
+	}
+	else
+	{
+		mainMenu.DrawMainMenu();
+	}
+
+	EndDrawing();
+}
+
 bool Application::applicationShouldClose() const
 {
 	return mainMenu.appShouldClose || WindowShouldClose();
@@ -20,6 +38,12 @@ MainMenu& MainMenu::getInstance()
 {
 	static MainMenu mainMenu;
 	return mainMenu;
+}
+
+Cinema& Cinema::getInstance()
+{
+	static Cinema cinemaPage;
+	return cinemaPage;
 }
 
 bool checkCollision(int x, int y, int width, int height)

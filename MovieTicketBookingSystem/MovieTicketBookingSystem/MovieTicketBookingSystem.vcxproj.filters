@@ -24,12 +24,18 @@
     <ClCompile Include="Back-End\CppFiles\applicationSetUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Front-End\CppFiles\drawCinemaPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Front-End\HeaderFiles\startApplication.h">
+    <ClInclude Include="HeaderFiles\startApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Back-End\HeaderFiles\applicationSetUp.h">
+    <ClInclude Include="HeaderFiles\applicationSetUp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\cinemaPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

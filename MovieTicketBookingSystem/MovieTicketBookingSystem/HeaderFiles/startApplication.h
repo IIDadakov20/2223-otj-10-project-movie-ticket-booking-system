@@ -3,8 +3,6 @@
 #include <iostream>
 #include <raylib.h>
 
-using namespace std;
-
 class MainMenu
 {
 public:
@@ -23,15 +21,10 @@ private:
 	MainMenu();
 	~MainMenu();
 
-	//void newGame();
-
 	Texture2D mainMenuBackground;
 	Texture2D startButton;
 	Texture2D exitButton;
-
-	Font font;
+	Texture2D alertBox;
 };
-
-bool DrawButton(int x, int y, int width, int height, Texture2D texture, Vector2 pos, int fontSize, const char* name, Font font);
 
 //void DrawText(int x, int y, int fontSize, const char* name, Font font);

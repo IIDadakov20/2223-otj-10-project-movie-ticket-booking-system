@@ -2,9 +2,8 @@
 
 #include <iostream>
 #include <assert.h>
-#include "../../Front-End/HeaderFiles/startApplication.h"
-
-using namespace std;
+#include "startApplication.h"
+#include "cinemaPage.h"
 
 class Application
 {
@@ -19,6 +18,10 @@ public:
 private:
 
 	MainMenu& mainMenu = MainMenu::getInstance();
+	Cinema& cinemaPage = Cinema::getInstance();
+
 };
 
 bool checkCollision(int x, int y, int width, int height);
+
+void DrawAlert();
