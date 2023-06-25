@@ -2,7 +2,17 @@
 
 #include <iostream>
 #include <raylib.h>
+#include <vector>
 #include <string>
+
+struct MovieData
+{
+	std::string movieName;
+	std::string movieLanguage;
+	std::string movieGenre;
+
+	Texture2D movieBanner;
+};
 
 class Cinema
 {
@@ -20,11 +30,11 @@ private:
 	~Cinema();
 
 	void chooseCity();
-	void drawMovies();
+	void drawMovieList();
 
 	bool cityIsChosen = false;
-
 	const char* cityName = "City";
+	std::vector<MovieData> movieList;
 
 	Texture2D cinemaPageBackground;
 	Texture2D button;

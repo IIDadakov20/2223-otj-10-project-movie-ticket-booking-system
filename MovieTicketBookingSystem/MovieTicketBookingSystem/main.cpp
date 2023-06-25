@@ -10,7 +10,7 @@ int main()
 
 	Application app;
 
-	nanodbc::connection conn(NANODBC_TEXT("Data Source=DESKTOP-UBABQHO\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+	//nanodbc::connection conn(NANODBC_TEXT("Data Source=DESKTOP-UBABQHO\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
 
 	while (!app.applicationShouldClose())
 	{

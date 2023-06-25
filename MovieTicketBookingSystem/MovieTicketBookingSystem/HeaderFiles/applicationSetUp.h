@@ -19,7 +19,6 @@ private:
 
 	MainMenu& mainMenu = MainMenu::getInstance();
 	Cinema& cinemaPage = Cinema::getInstance();
-
 };
 
 bool checkCollision(float x, float y, float width, float height);

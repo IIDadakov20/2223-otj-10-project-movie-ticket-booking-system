@@ -6,6 +6,13 @@ Cinema::Cinema()
 	button = LoadTexture("../assets/button.png");
 
 	font = LoadFontEx("../assets/font.ttf", 25, NULL, 0);
+
+	movieList = {
+		{"The Flash","English", "Action/Fantasy", LoadTexture("../assets/movies/TheFlash.png")},
+		{"Anna","Bulgarian", "Drama", LoadTexture("../assets/movies/Anna.png")},
+		{"Elemental","English", "Animation/Comedy", LoadTexture("../assets/movies/Elemental.png")},
+		{"The Boogeyman","English", "Horror/Thriller", LoadTexture("../assets/movies/TheBoogeyman.png")},
+	};
 }
 
 Cinema::~Cinema()
@@ -14,6 +21,11 @@ Cinema::~Cinema()
 	UnloadTexture(button);
 
 	UnloadFont(font);
+
+	for (int i = 0; i < 4; i++)
+	{
+		UnloadTexture(movieList[i].movieBanner);
+	}
 }
 
 void Cinema::DrawCinema()
@@ -32,20 +44,22 @@ void Cinema::chooseCity()
 
 	if (cityIsChosen)
 	{
-		if (DrawButton(190, 105, button, { 190 + 13, 110 }, 25, "Varna", font, cityName))
-		{
-			
-		}
-		if (DrawButton(330, 105, button, { 330 + 13, 110 }, 25, "Plovdiv", font, cityName))
-		{
-			
-		}
+		DrawButton(190, 105, button, { 190 + 13, 110 }, 25, "Varna", font, cityName);
+		DrawButton(330, 105, button, { 330 + 13, 110 }, 25, "Plovdiv", font, cityName);
 	}
+
+	drawMovieList();
 }
 
-void Cinema::drawMovies()
+void Cinema::drawMovieList()
 {
-	
+	if (cityName != "City")
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			DrawTexture(movieList[i].movieBanner, 72 * (i + 1) + 230 * i, 220, WHITE);
+		}
+	}
 }
 
 bool DrawButton(int x, int y, Texture2D texture, Vector2 pos, float fontSize, const char* text, Font font, const char*& name)
