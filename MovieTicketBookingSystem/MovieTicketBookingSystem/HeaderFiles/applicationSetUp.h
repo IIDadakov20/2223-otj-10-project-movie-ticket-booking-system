@@ -22,6 +22,6 @@ private:
 
 };
 
-bool checkCollision(int x, int y, int width, int height);
+bool checkCollision(float x, float y, float width, float height);
 
 void DrawAlert();

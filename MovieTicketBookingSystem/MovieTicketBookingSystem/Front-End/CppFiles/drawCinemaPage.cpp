@@ -1,11 +1,11 @@
-#include "../../HeaderFiles/cinemaPage.h"
+#include "../../HeaderFiles/ApplicationSetUp.h"
 
 Cinema::Cinema()
 {
 	cinemaPageBackground = LoadTexture("../assets/cinemaPage.png");
 	button = LoadTexture("../assets/button.png");
 
-	font = LoadFont("../assets/font.ttf");
+	font = LoadFontEx("../assets/font.ttf", 25, NULL, 0);
 }
 
 Cinema::~Cinema()
@@ -21,81 +21,46 @@ void Cinema::DrawCinema()
 	DrawTexture(cinemaPageBackground, 0, 0, RAYWHITE);
 
 	chooseCity();
-
-	if (cityIsChosen && cityName != "Cinema")
-	{
-		chooseCinema();
-	}
 }
 
-bool Cinema::chooseCity()
+void Cinema::chooseCity()
 {
-	if (DrawButton(55, 110, 250, 70, button, { 115, 125 }, 40, cityName, font))
+	if (DrawButton(50, 105, button, { 50 + 13, 110 }, 25, cityName, font, cityName))
 	{
 		cityIsChosen = !cityIsChosen;
 	}
 
-	DrawButton(325, 110, 250, 70, button, { 385, 125 }, 40, cinemaName, font);
-
 	if (cityIsChosen)
 	{
-		if (DrawButton(55, 210, 250, 70, button, { 115, 225 }, 40, "Burgas", font))
+		if (DrawButton(190, 105, button, { 190 + 13, 110 }, 25, "Varna", font, cityName))
 		{
-			cityName = "Burgas";
-			cinemaName = "Cinema";
-
+			
 		}
-		if (DrawButton(55, 310, 250, 70, button, { 115, 325 }, 40, "Varna", font))
+		if (DrawButton(330, 105, button, { 330 + 13, 110 }, 25, "Plovdiv", font, cityName))
 		{
-			cityName = "Varna";
-			cinemaName = "Cinema";
-		}
-	}
-
-	return cityIsChosen;
-}
-
-void Cinema::chooseCinema()
-{
-	if (cityName == "Burgas")
-	{
-		if (DrawButton(325, 210, 250, 70, button, { 385, 225 }, 40, "MS", font))
-		{
-			cinemaName = "MS";
-		}
-		if (DrawButton(325, 310, 250, 70, button, { 385, 325 }, 40, "Kon", font))
-		{
-			cinemaName = "Kon";
-		}
-	}
-
-	if (cityName == "Varna")
-	{
-		if (DrawButton(325, 210, 250, 70, button, { 385, 225 }, 40, "MS", font))
-		{
-			cinemaName = "MS";
-		}
-		if (DrawButton(325, 310, 250, 70, button, { 385, 325 }, 40, "Kon", font))
-		{
-			cinemaName = "Kon";
+			
 		}
 	}
 }
 
-bool DrawButton(int x, int y, int width, int height, Texture2D texture, Vector2 pos, int fontSize, const char* name, Font font)
+void Cinema::drawMovies()
 {
-	Rectangle rec = { x, y, width, height };
+	
+}
 
-	DrawTexture(texture, rec.x, rec.y, WHITE);
-	DrawTextEx(font, name, pos, fontSize, 5, BLACK);
+bool DrawButton(int x, int y, Texture2D texture, Vector2 pos, float fontSize, const char* text, Font font, const char*& name)
+{
+	DrawTexture(texture, x, y, WHITE);
+	DrawTextEx(font, text, pos, fontSize, 5, BLACK);
 
-	if (CheckCollisionPointRec(GetMousePosition(), rec))
+	if (checkCollision(x, y, 120, 35))
 	{
-		DrawTexture(texture, rec.x, rec.y, { 189, 183, 183 ,255 });
-		DrawTextEx(font, name, pos, fontSize, 5, BLACK);
+		DrawTexture(texture, x, y, { 189, 183, 183 ,255 });
+		DrawTextEx(font, text, pos, fontSize, 5, BLACK);
 
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 		{
+			name = text;
 			return 1;
 		}
 	}

@@ -19,15 +19,12 @@ private:
 	Cinema();
 	~Cinema();
 
+	void chooseCity();
+	void drawMovies();
 
-	bool chooseCity();
-	void chooseCinema();
-
-	bool cinemaIsChosen = false;
 	bool cityIsChosen = false;
 
 	const char* cityName = "City";
-	const char* cinemaName = "Cinema";
 
 	Texture2D cinemaPageBackground;
 	Texture2D button;
@@ -35,4 +32,4 @@ private:
 	Font font;
 };
 
-bool DrawButton(int x, int y, int width, int height, Texture2D texture, Vector2 pos, int fontSize, const char* name, Font font);
+bool DrawButton(int x, int y, Texture2D texture, Vector2 pos, float fontSize, const char* text, Font font, const char*& name);

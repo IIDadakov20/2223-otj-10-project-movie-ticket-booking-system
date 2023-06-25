@@ -46,7 +46,7 @@ Cinema& Cinema::getInstance()
 	return cinemaPage;
 }
 
-bool checkCollision(int x, int y, int width, int height)
+bool checkCollision(float x, float y, float width, float height)
 {
 	Rectangle rec = { x, y, width, height };
 

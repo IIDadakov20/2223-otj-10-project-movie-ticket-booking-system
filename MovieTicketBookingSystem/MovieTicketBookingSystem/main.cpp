@@ -1,4 +1,5 @@
 #include "HeaderFiles/applicationSetUp.h"
+#include "nanodbc/nanodbc.h"
 
 int main()
 {
@@ -8,6 +9,8 @@ int main()
 	InitWindow(screenWidth, screenHeight, "MTBS");
 
 	Application app;
+
+	nanodbc::connection conn(NANODBC_TEXT("Data Source=DESKTOP-UBABQHO\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
 
 	while (!app.applicationShouldClose())
 	{
