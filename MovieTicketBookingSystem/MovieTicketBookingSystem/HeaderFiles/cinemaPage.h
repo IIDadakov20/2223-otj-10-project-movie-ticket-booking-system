@@ -42,4 +42,6 @@ private:
 	Font font;
 };
 
+std::vector<int> cinemaBannerShuffle(std::vector<int> movie);
+
 bool DrawButton(int x, int y, Texture2D texture, Vector2 pos, float fontSize, const char* text, Font font, const char*& name);

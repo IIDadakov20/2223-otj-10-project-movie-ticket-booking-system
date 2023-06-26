@@ -1,6 +1,8 @@
 #pragma once
 
-#include <iostream>
+#include <random>
+#include <unordered_map>
+#include <array>
 #include <assert.h>
 #include "startApplication.h"
 #include "cinemaPage.h"

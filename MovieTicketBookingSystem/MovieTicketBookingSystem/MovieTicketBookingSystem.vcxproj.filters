@@ -27,6 +27,9 @@
     <ClCompile Include="Front-End\CppFiles\drawCinemaPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Back-End\CppFiles\movieSelection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\startApplication.h">
