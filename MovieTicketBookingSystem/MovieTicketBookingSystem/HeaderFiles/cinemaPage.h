@@ -31,6 +31,7 @@ private:
 
 	void chooseCity();
 	void drawMovieList();
+	void drawMoviePage();
 
 	bool cityIsChosen = false;
 	const char* cityName = "City";

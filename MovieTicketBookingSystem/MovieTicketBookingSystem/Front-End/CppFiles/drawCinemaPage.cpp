@@ -61,7 +61,6 @@ void Cinema::drawMovieList()
 	std::unordered_map<std::string, std::array<int, 4>> cityIndex = {
 	{ "Varna", {0, 1, 3, 4} },
 	{ "Plovdiv", {1, 2, 4, 5} },
-	{ "Sofiq", {2, 3, 4, 5} },
 	};
 
 	auto cityRange = cityIndex.find(cityName);
@@ -72,13 +71,18 @@ void Cinema::drawMovieList()
 
 		if (cityName != "City")
 		{
-			DrawTexture(movieList[startIndex].movieBanner, 72 * (i + 1) + 230 * i, 220, WHITE);
+			DrawTexturePro(movieList[startIndex].movieBanner, { 0, 0, 500, 700 }, { float(72) * (i + 1) + 230 * i, 220, 230, 320 }, Vector2(), 0, WHITE);
 		}
 		else
 		{
-			DrawTexture(movieList[movie[i]].movieBanner, 72 * (i + 1) + 230 * i, 220, WHITE);
+			DrawTexturePro(movieList[movie[i]].movieBanner, { 0, 0, 500, 700 }, { float(72) * (i + 1) + 230 * i, 220, 230, 320 }, Vector2(), 0, WHITE);
 		}
 	}
+}
+
+void Cinema::drawMoviePage()
+{
+
 }
 
 bool DrawButton(int x, int y, Texture2D texture, Vector2 pos, float fontSize, const char* text, Font font, const char*& name)

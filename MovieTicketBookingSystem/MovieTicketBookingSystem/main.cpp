@@ -1,5 +1,5 @@
 #include "HeaderFiles/applicationSetUp.h"
-//#include "nanodbc/nanodbc.h"
+#include "nanodbc/nanodbc.h"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
 
 	Application app;
 
-	//nanodbc::connection conn(NANODBC_TEXT("Data Source=DESKTOP-UBABQHO\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+	nanodbc::connection conn(NANODBC_TEXT("Driver={ODBC Driver 17 for SQL Server};Server=localhost\\SQLEXPRESS;Database=CinemaManagement;Trusted_Connection=yes"));
 
 	while (!app.applicationShouldClose())
 	{

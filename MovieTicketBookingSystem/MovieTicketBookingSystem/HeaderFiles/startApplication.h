@@ -7,9 +7,6 @@ class MainMenu
 {
 public:
 
-	MainMenu(MainMenu const&) = delete;
-	void operator=(MainMenu const&) = delete;
-
 	static MainMenu& getInstance();
 	void DrawMainMenu();
 

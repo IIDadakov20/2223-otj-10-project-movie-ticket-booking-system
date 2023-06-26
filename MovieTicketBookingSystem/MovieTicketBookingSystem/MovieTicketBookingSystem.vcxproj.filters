@@ -30,6 +30,9 @@
     <ClCompile Include="Back-End\CppFiles\movieSelection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="libs\nanodbc\nanodbc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\startApplication.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\cinemaPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\nanodbc\nanodbc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

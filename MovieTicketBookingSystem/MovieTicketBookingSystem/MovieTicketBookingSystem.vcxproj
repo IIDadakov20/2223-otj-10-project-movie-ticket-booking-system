@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)external</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)MovieTicketBookingSystem/libs</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,12 +139,14 @@
     <ClCompile Include="Back-End\CppFiles\movieSelection.cpp" />
     <ClCompile Include="Front-End\CppFiles\drawCinemaPage.cpp" />
     <ClCompile Include="Front-End\CppFiles\startApplication.cpp" />
+    <ClCompile Include="libs\nanodbc\nanodbc.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\applicationSetUp.h" />
     <ClInclude Include="HeaderFiles\cinemaPage.h" />
     <ClInclude Include="HeaderFiles\startApplication.h" />
+    <ClInclude Include="libs\nanodbc\nanodbc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
